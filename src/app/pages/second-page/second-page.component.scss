@@ -12,3 +12,9 @@ span{
         }
     }
 }
+
+@media screen and(max-width:576px){
+    strong{
+        display: block;
+    }
+}
