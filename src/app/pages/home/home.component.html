@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-header">
+        <h3>Automobile Evalutation Form</h3>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="auditForm" (ngSubmit)="submitAuditForm()">
+            <div class="input-group">
+                <input name="name" type="text" formControlName="name" class="form-input" placeholder="Full Name *">
+                <small class="text-warning" *ngIf="createdAuditForm.name.invalid && submitted">
+                    Full Name is Required
+                </small>
+            </div>
+            <div class="input-group">
+                <input name="refcode" type="text" formControlName="refcode" class="form-input" placeholder="Reference Code *">
+                <small class="text-warning" *ngIf="createdAuditForm.refcode.invalid && createdAuditForm.refcode.touched">
+                    Code must be a min of 6 characters, min of 1 uppercase, min of 1 lowercase character, min of 1 Numbers and min of Special character
+                </small>
+                <small class="text-warning" *ngIf="createdAuditForm.refcode.invalid && submitted">
+                    Code must be a min of 6 characters, min of 1 uppercase, min of 1 lowercase character, min of 1 Numbers and min of Special character
+                </small>
+            </div>
+            <div class="input-group">
+                <input name="email" type="email" formControlName="email" class="form-input" placeholder="Email Address *">
+                <small class="text-warning" *ngIf="createdAuditForm.email.invalid && submitted">
+                    Valid Email Address is Required
+                </small>
+            </div>
+            <div class="input-group">
+                <select name="make" formControlName="make" class="form-select" (change)="filterCars()">
+                    <option disabled selected>Select Car Make *</option>
+                    <option *ngFor="let item of manufacturers" value="{{item.name}}"><span class="capital-text">{{item.name}}</span></option>
+                </select>
+                <small class="text-warning" *ngIf="createdAuditForm.make.invalid && submitted">
+                    Car Make is Required
+                </small>
+            </div>
+            <div class="input-group">
+                <select name="model" formControlName="model" class="form-select">
+                    <option disabled selected>Select Car Model *</option>
+                    <option *ngFor="let item of makerModel" value="{{item.model}}"><span class="capital-text">{{item.model}}</span></option>
+                </select>
+                <small class="text-warning" *ngIf="createdAuditForm.model.invalid && submitted">
+                    Car Model is Required
+                </small>
+            </div>
+    
+            <div class="input-group">
+                <p>Select Automible Condition *</p>
+                <div class="form-check-box" *ngFor="let item of checkList">
+                    <input type="checkbox" name="engine" id="{{item.id}}" value="{{item.value}}" (change)="onCheckboxChange($event)">
+                    <label for="{{item.id}}">{{item.value}}</label>
+                </div>
+                <small class="text-warning" *ngIf="this.auditForm.controls['conditions'].errors?.required && submitted">
+                    Automobile Condition is Required
+                </small>
+            </div>
+            <div class="center">
+                <button type="submit" class="btn">Next</button>
+            </div>
+        </form>
+    </div>
+</div>

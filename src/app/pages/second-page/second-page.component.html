@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">
+        <h3>Automobile Evalutation Data</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-unstyled">
+            <li class="list-item"><strong>Full Name:</strong> {{userResult.name}}</li>
+            <li class="list-item"><strong>Reference Code:</strong> {{userResult.refcode}}</li>
+            <li class="list-item"><strong>Email:</strong> {{userResult.email}}</li>
+            <li class="list-item"><strong>Make:</strong> {{userResult.make}}</li>
+            <li class="list-item"><strong>Model:</strong> {{userResult.model}}</li>
+            <li class="list-item"><strong>Model:</strong> <span *ngFor="let condition of userResult.conditions">{{condition}}<i>,</i></span></li>
+        </ul>
+
+        <div class="center">
+            <button type="button" class="btn" (click)="submitData()">Submit</button>
+        </div>
+    </div>
+</div>

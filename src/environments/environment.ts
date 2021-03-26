@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  serverUrl: 'https://private-anon-2f7ee5f101-carsapi1.apiary-mock.com/',
 };
 
 /*

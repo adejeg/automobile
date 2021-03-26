@@ -1,0 +1,41 @@
+nav{
+    // styling the nav bar
+    background: #ffffff;
+    box-shadow: rgba(42, 52, 61, 0.16) 0px 4px 8px 0px;
+    display: flex;
+    justify-content: space-between;
+
+    // css rules for logo
+    .nav-logo{
+        padding-left: 2rem;
+        h3{
+            margin-bottom: 0px;
+        }
+    }
+
+    // css rules for nav items
+    .nav-list{
+        display: flex;
+        list-style: none;
+        .nav-item{
+            padding: 0px;
+
+            // css rules for anchor tags
+            a{
+                padding: 1rem 2rem;
+                background: #5f9ea0;
+                background-size: 0px;
+                text-decoration: none;
+                color: #ffffff;
+                &.active{
+                    background:#b6811f;
+                }
+                &:hover{
+                    transition: all ease-in-out .3s;
+                    text-decoration: none;
+                    background:rgba(182, 129, 31, .7);
+                }
+            }
+        }
+    }
+}

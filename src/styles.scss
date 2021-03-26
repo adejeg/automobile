@@ -1,1 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import '~ngx-toastr/toastr';
+
+*{
+    box-sizing: border-box;
+}
+
+// html body rule
+html, body{
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    font-weight: 400;
+    background: #eee;
+}
+
+// headers rule
+h1, h2, h3, h4, h5{
+    font-weight: 700;
+}
+
+// cards rule
+.card{
+    background: #ffffff;
+    width: 50%;
+    margin: 5% auto;
+    
+    .card-header{
+        padding: 1rem;
+        border-bottom: 1px solid #5f9ea0;
+
+        h3{
+            margin: 0px;
+        }
+    }
+
+    .card-body{
+        padding: 3rem 5rem 3rem 5rem;
+        border-bottom: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        .input-group{
+            width: 100%;
+            margin-bottom: 1.5rem;
+    
+            .form-input, .form-select{
+                width: 100%;
+                display: block;
+                padding: .5rem .7rem;
+            }
+
+            .form-check-box{
+                margin-bottom: .5rem;
+
+                label{
+                    margin-left: .3rem;
+                }
+            }
+        }
+    }
+}
+
+.btn{
+    font-size: 1rem;
+    padding: .3rem 1.5rem;
+}
+
+.text-warning{
+    color: #b6811f;
+}
+
+.center{
+    text-align: center;
+}
+
+ul.list-unstyled{
+    list-style: none;
+    padding: 0px;
+
+    li{
+        padding: 0px;
+
+        &.list-item{
+            padding: .8rem .5rem;
+
+            &:hover{
+                background: #eee;
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 992px){
+    .card{
+        width: 70%;
+    }   
+}
+
+@media screen and(max-width: 576px){
+    html, body{
+        font-size: 14px;
+    }   
+    .card{
+        width: 90%;
+        .card-body{
+            padding: 3rem;
+        }
+    }   
+}
